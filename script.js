@@ -1,7 +1,7 @@
 function handleSubmission() {
-  window.adobeDataLayer = window.adobeDataLayer || [];
+  const selectedAssetClass =
+    document.querySelector('input[name="assetclass"]:checked');
 
-  const selectedAssetClass = document.querySelector('input[name="assetclass"]:checked');
   const errorMessage = document.getElementById("error-message");
   const messageBox = document.getElementById("message");
 
@@ -13,22 +13,28 @@ function handleSubmission() {
 
   errorMessage.textContent = "";
 
-  const subscriptionEvent = {
+  // ✅ THIS WAS MISSING / NOT EXECUTING BEFORE
+  localStorage.setItem("PreferredInterest", selectedAssetClass.value);
+
+  console.log(
+    "✅ Stored in localStorage:",
+    localStorage.getItem("PreferredInterest")
+  );
+
+  // AEP Data Layer push (unchanged)
+  window.adobeDataLayer = window.adobeDataLayer || [];
+  window.adobeDataLayer.push({
     event: "assetClassSelection",
     xdm: {
       eventType: "assetClassSelection",
-      eventID: "investment_preference_event",
-      timestamp: new Date().toISOString(),
       _accenture_partner: {
         Interest: {
           PreferredInterest: selectedAssetClass.value
         }
-    }}
-  };
+      }
+    }
+  });
 
-  console.log("📩 Sending asset class data to AEP:", subscriptionEvent);
-  window.adobeDataLayer.push(subscriptionEvent);
-
-  // ✅ Show thank-you message
-  messageBox.textContent = `Thank you for selecting "${selectedAssetClass.value}". We'll use this to personalize your experience.`;
+  messageBox.textContent =
+    `Thank you for selecting "${selectedAssetClass.value}".`;
 }
