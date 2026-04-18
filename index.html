@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+
+    <form id="subscriptionForm">
+      <p>Choose your preferred financial instrument:</p>
+
+      <div class="option-assetclass">
+        <input type="radio" id="assetclass-stocks" name="assetclass" value="Stocks" required>
+        <label for="assetclass-stocks">Stocks</label>
+      </div>
+
+      <div class="option-assetclass">
+        <input type="radio" id="assetclass-bonds" name="assetclass" value="Bonds" required>
+        <label for="assetclass-bonds">Bonds</label>
+      </div>
+
+      <div class="option-assetclass">
+        <input type="radio" id="assetclass-cd" name="assetclass" value="CD" required>
+        <label for="assetclass-cd">CD</label>
+      </div>
+
+      <br><br>
+      <button type="button" id="submit-button" onclick="handleSubmission()">Submit Preference</button>
+    </form>
+
+    <div id="error-message" style="color: red;"></div>
+    <div id="message" style="color: green; font-weight: bold; margin-top: 10px;"></div>
+
+    <!-- Your JS -->
+    <script src="script.js"></script>
+
+    <!-- Adobe Launch (keep last) -->
+    <script src="https://assets.adobedtm.com/e72b4113c11a/523d00e5384d/launch-37956bbe7fae.min.js" async></script>
+
+  </body>
+</html>
