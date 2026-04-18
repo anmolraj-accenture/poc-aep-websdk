@@ -5,8 +5,8 @@
   <title>Investment Preference</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ✅ Correct CSS include -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- ✅ CSS -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
@@ -14,38 +14,36 @@
   <form id="subscriptionForm">
     <p>Choose your preferred financial instrument:</p>
 
-    <div class="option-assetclass">
-      <input type="radio" id="assetclass-stocks" name="assetclass" value="Stocks">
-      <label for="assetclass-stocks">Stocks</label>
+    <div>
+      <input type="radio" id="stocks" name="assetclass" value="Stocks">
+      <label for="stocks">Stocks</label>
     </div>
 
-    <div class="option-assetclass">
-      <input type="radio" id="assetclass-bonds" name="assetclass" value="Bonds">
-      <label for="assetclass-bonds">Bonds</label>
+    <div>
+      <input type="radio" id="bonds" name="assetclass" value="Bonds">
+      <label for="bonds">Bonds</label>
     </div>
 
-    <div class="option-assetclass">
-      <input type="radio" id="assetclass-cd" name="assetclass" value="CD">
-      <label for="assetclass-cd">CD</label>
+    <div>
+      <input type="radio" id="cd" name="assetclass" value="CD">
+      <label for="cd">CD</label>
     </div>
 
-    <br><br>
-    <button type="button" id="submit-button" onclick="handleSubmission()">
-      Submit Preference
-    </button>
+    <br>
+    <button type="button" onclick="handleSubmission()">Submit Preference</button>
   </form>
 
-  <div id="error-message" style="color: red;"></div>
-  <div id="message" style="color: green; font-weight: bold; margin-top: 10px;"></div>
+  <div id="error-message" style="color:red;"></div>
+  <div id="message" style="color:green;font-weight:bold;"></div>
 
-  <!-- ✅ Your JS (handles localStorage + dataLayer push) -->
+  <!-- ✅ YOUR JS MUST LOAD FIRST -->
   <script src="script.js"></script>
 
-  <!-- ✅ Adobe Launch (must be LAST) -->
+  <!-- ✅ ADOBE LAUNCH MUST BE LAST -->
   <script
     src="https://assets.adobedtm.com/e72b4113c11a/523d00e5384d/launch-37956bbe7fae.min.js"
-    async>
-  </script>
+    async
+  ></script>
 
 </body>
 </html>
