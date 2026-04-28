@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Investment Preference</title>
+  <title>Model Score Calculation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- ✅ CSS -->
@@ -12,21 +12,28 @@
 <body>
 
   <form id="subscriptionForm">
-    <p>Choose your preferred financial instrument:</p>
+    <p>Choose your preferred Offer:</p>
 
     <div>
       <input type="radio" id="stocks" name="assetclass" value="Stocks">
-      <label for="stocks">Stocks</label>
+      <label for="stocks">Offer1-Deals</label>
     </div>
 
     <div>
       <input type="radio" id="bonds" name="assetclass" value="Bonds">
-      <label for="bonds">Bonds</label>
+      <label for="bonds">Offer2-Deals</label>
     </div>
 
     <div>
       <input type="radio" id="cd" name="assetclass" value="CD">
-      <label for="cd">CD</label>
+      <label for="cd">Offer3-Deals</label>
+    </div>
+        <div
+      class="right-column"
+      id="ajo-offer"
+      data-personalization-region-id="web://anmolraj-accenture.github.io/poc-decisioning2#ajo-offer"
+    >
+      <p>Loading your personalized offer...</p>
     </div>
 
     <br>
@@ -37,7 +44,7 @@
   <div id="message" style="color:green;font-weight:bold;"></div>
 
   <!-- ✅ YOUR JS MUST LOAD FIRST -->
-  <script src="script.js"></script>
+  <script src="scripts.js"></script>
 
   <!-- ✅ ADOBE LAUNCH MUST BE LAST -->
   <script
