@@ -10,7 +10,6 @@ function handleSubmission() {
     messageBox.textContent = "";
     return;
   }
-
   const preferredInterest = selectedAssetClass.value;
 
   errorMessage.textContent = "";
