@@ -4,7 +4,6 @@ function handleSubmission() {
   
   const errorMessage = document.getElementById("error-message");
   const messageBox = document.getElementById("message");
-
   if (!selectedAssetClass) {
     errorMessage.textContent = "Please select a financial instrument.";
     messageBox.textContent = "";
